@@ -65,14 +65,14 @@ public class EditCategoria extends Activity implements OnClickListener {
                 break;
 
             case R.id.btn_delete:
-                dbManager.delete(_id);
+                dbManager.delete1(_id);
                 this.returnHome();
                 break;
         }
     }
 
     public void returnHome() {
-        Intent home_intent = new Intent(getApplicationContext(), ListTipoTransacao.class)
+        Intent home_intent = new Intent(getApplicationContext(), ListCategoria.class)
                 .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(home_intent);
     }
