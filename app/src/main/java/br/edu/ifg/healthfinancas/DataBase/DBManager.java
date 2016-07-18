@@ -1,7 +1,7 @@
 package br.edu.ifg.healthfinancas.DataBase;
 
 /**
- * Created by anupamchugh on 19/10/15.
+ * Created by KuroiSaru on 10/07/16.
  */
 import android.content.ContentValues;
 import android.content.Context;
@@ -31,6 +31,8 @@ public class DBManager {
         dbHelper.close();
     }
 
+    //---------------------------------------------------------------------------------//
+    //INSERTS
     //INSERINDO TIPPOTRANSAÇÂO
     public void insert(String name) {
         ContentValues contentValue = new ContentValues();
@@ -127,6 +129,8 @@ public class DBManager {
         }
         return cursor;
     }
+
+
     //--------------------------------------------------------------------------------------------//
     //UPDATES
 
@@ -148,29 +152,31 @@ public class DBManager {
     }
 
     //Update CONTROLEGASTOS
-    public int update2(long _id, String catNome,String trantipcodigo) {
+    public int update2(long _id, String contLimite,String contCatCodigo) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(DatabaseHelper.CONTLIMITE, catNome);
-        contentValues.put(DatabaseHelper.CONTCATCODIGO,trantipcodigo);
+        contentValues.put(DatabaseHelper.CONTLIMITE, contLimite);
+        contentValues.put(DatabaseHelper.CONTCATCODIGO,contCatCodigo);
         int i = database.update(DatabaseHelper.TABLE_NAME3, contentValues, DatabaseHelper._ID + " = " + _id, null);
         return i;
     }
 
     //Update RELATORIO
-    public int update3(long _id, String catNome,String trantipcodigo) {
+    public int update3(long _id, String relDtInicio,String relDtFim) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(DatabaseHelper.CATNOME, catNome);
-        contentValues.put(DatabaseHelper.TRANCATCODIGO ,trantipcodigo);
-        int i = database.update(DatabaseHelper.TABLE_NAME2, contentValues, DatabaseHelper._ID + " = " + _id, null);
+        contentValues.put(DatabaseHelper.RELDTINICIO, relDtInicio);
+        contentValues.put(DatabaseHelper.RELDTFIM ,relDtFim);
+        int i = database.update(DatabaseHelper.TABLE_NAME4, contentValues, DatabaseHelper._ID + " = " + _id, null);
         return i;
     }
 
     //Update TRANSACAO
-    public int update4(long _id, String catNome,String trantipcodigo) {
+    public int update4(long _id, String tranDescricao,String tranData,String tranValor,String tranCatCodigo) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(DatabaseHelper.CATNOME, catNome);
-        contentValues.put(DatabaseHelper.TRANCATCODIGO ,trantipcodigo);
-        int i = database.update(DatabaseHelper.TABLE_NAME2, contentValues, DatabaseHelper._ID + " = " + _id, null);
+        contentValues.put(DatabaseHelper.TRANDESCRICAO ,tranDescricao);
+        contentValues.put(DatabaseHelper.TRANDATA, tranData);
+        contentValues.put(DatabaseHelper.TRANVALOR, tranValor);
+        contentValues.put(DatabaseHelper.TRANCATCODIGO, tranCatCodigo);
+        int i = database.update(DatabaseHelper.TABLE_NAME5, contentValues, DatabaseHelper._ID + " = " + _id, null);
         return i;
     }
 
