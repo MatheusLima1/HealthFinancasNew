@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Health Finanças</string>
+    <string name="enter_name">Country Name</string>
+    <string name="add_record">Adicionar</string>
+    <string name="btn_update">Update</string>
+    <string name="btn_delete">Delete</string>
+    <string name="empty_list_text">Não foi encontrado registros</string>
+    <string name="enter_desc">Abreviação</string>
+    <string name="enter_tipo_transacao">Tipo Transação</string>
+    <string name="strCredito">Crédito</string>
+    <string name="strDebito">Débito</string>
+    <string name="enter_categoria">Categoria</string>
+
+</resources>
