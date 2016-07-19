@@ -40,10 +40,10 @@ public class DBManager {
         database.insert(DatabaseHelper.TABLE_NAME, null, contentValue);
     }
     //INSERINDO CATEGORIA
-    public void insert2(String catnome, Integer trantipcodigo) {
+    public void insert2(String catnome /*Integer trantipcodigo*/) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(DatabaseHelper.CATNOME, catnome);
-        contentValue.put(DatabaseHelper.TRANTIPCODIGO, trantipcodigo);
+        //contentValue.put(DatabaseHelper.TRANTIPCODIGO/, trantipcodigo);
         database.insert(DatabaseHelper.TABLE_NAME2, null, contentValue);
     }
 
@@ -91,7 +91,7 @@ public class DBManager {
 
     //CURSOR CATEGORIA
     public Cursor fetch1() {
-        String[] columns = new String[] { DatabaseHelper._ID1, DatabaseHelper.CATNOME,DatabaseHelper.TRANCATCODIGO };
+        String[] columns = new String[] { DatabaseHelper._ID1, DatabaseHelper.CATNOME /*,DatabaseHelper.TRANCATCODIGO*/ };
         Cursor cursor = database.query(DatabaseHelper.TABLE_NAME2, columns, null, null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
@@ -143,10 +143,10 @@ public class DBManager {
     }
 
     //Update Categoria
-    public int update1(long _id, String catNome,String trantipcodigo) {
+    public int update1(long _id, String catNome/*,String trantipcodigo*/) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(DatabaseHelper.CATNOME, catNome);
-        contentValues.put(DatabaseHelper.TRANCATCODIGO ,trantipcodigo);
+        //contentValues.put(DatabaseHelper.TRANCATCODIGO ,trantipcodigo);
         int i = database.update(DatabaseHelper.TABLE_NAME2, contentValues, DatabaseHelper._ID + " = " + _id, null);
         return i;
     }

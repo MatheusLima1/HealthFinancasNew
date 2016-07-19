@@ -24,10 +24,10 @@ public class ListCategoria extends ActionBarActivity {
 
     private SimpleCursorAdapter adapter;
 
-    final String[] from = new String[] { DatabaseHelper._ID,
-            DatabaseHelper.CATNOME, DatabaseHelper.TRANTIPCODIGO};
+    final String[] from = new String[] { DatabaseHelper._ID1,
+            DatabaseHelper.CATNOME/*, DatabaseHelper.TRANTIPCODIGO*/};
 
-    final int[] to = new int[] { R.id.id, R.id.catnome_edittext,R.id.tit_categoria};
+    final int[] to = new int[] { R.id.id2, R.id.catnome_edittext/*,R.id.tit_categoria*/};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +39,8 @@ public class ListCategoria extends ActionBarActivity {
         dbManager.open();
         Cursor cursor = dbManager.fetch();
 
-        listView = (ListView) findViewById(R.id.list_view);
-        listView.setEmptyView(findViewById(R.id.empty));
+        listView = (ListView) findViewById(R.id.ListCategoria);
+        listView.setEmptyView(findViewById(R.id.emptyCat));
 
         adapter = new SimpleCursorAdapter(this, R.layout.act_view_categoria, cursor, from, to, 0);
         adapter.notifyDataSetChanged();
@@ -51,17 +51,17 @@ public class ListCategoria extends ActionBarActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long viewId) {
-                TextView idTextView = (TextView) view.findViewById(R.id.id);
+                TextView idTextView = (TextView) view.findViewById(R.id.id2);
                 TextView titleTextView = (TextView) view.findViewById(R.id.catnome_edittext);
-                TextView descTextView = (TextView) view.findViewById(R.id.trantiptxt);
+                //TextView descTextView = (TextView) view.findViewById(R.id.trantiptxt);
 
                 String id = idTextView.getText().toString();
                 String catnome = titleTextView.getText().toString();
-                String  trantiptxt = descTextView.getText().toString();
+                //String  trantiptxt = descTextView.getText().toString();
 
-                Intent modify_intent = new Intent(getApplicationContext(), EditTipoTransacao.class);
+                Intent modify_intent = new Intent(getApplicationContext(), EditCategoria.class);
                 modify_intent.putExtra("Nome categoria", catnome);
-                modify_intent.putExtra("Tipo Transação", trantiptxt);
+               // modify_intent.putExtra("Tipo Transação", trantiptxt);
                 modify_intent.putExtra("id", id);
 
                 startActivity(modify_intent);

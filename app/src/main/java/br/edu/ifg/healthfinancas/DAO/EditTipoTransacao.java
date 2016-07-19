@@ -43,6 +43,7 @@ public class EditTipoTransacao extends Activity implements OnClickListener {
         String id = intent.getStringExtra("id");
         String name = intent.getStringExtra("title");
 
+        //talvez o id tenha q ser id2
         _id = Long.parseLong(id);
 
         novoText.setText(name);

@@ -5,7 +5,7 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/id"
+        android:id="@+id/id1"
         android:layout_width="25dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -19,7 +19,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/id"
+        android:layout_toRightOf="@id/id1"
         android:maxLines="1"
         android:padding="3dp"
         android:textSize="17sp"
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tit_tipo_transacao"
         android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/id"
+        android:layout_toRightOf="@id/id1"
         android:ellipsize="end"
         android:maxLines="2"
         android:padding="3dp"

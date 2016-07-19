@@ -24,7 +24,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //COLUNA DA TABELA CATEGORIA
     public static final String _ID1 = "_id";
     public static final String CATNOME = "cat_nome";
-    public static final String TRANTIPCODIGO = "tran_tip_codigo";
+    //public static final String TRANTIPCODIGO = "tran_tip_codigo";
 
     //COLUNA DA TABELA CONTROLEGASTOS
     public static final String _ID2 = "_id";
@@ -53,8 +53,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String CREATE_TABLE = "create table " + TABLE_NAME + "(" + _ID
             + " INTEGER PRIMARY KEY AUTOINCREMENT, " + TIPTIPO + " VARCHAR (45));";
     private static final String CREATE_TABLE2 = "create table " + TABLE_NAME2 + "(" + _ID1
-            + " INTEGER PRIMARY KEY AUTOINCREMENT, " + CATNOME + " VARCHAR(45) NOT NULL, " + TRANTIPCODIGO
-            + " INTEGER REFERENCES TIPOTRANSACAO (_id));";
+            + " INTEGER PRIMARY KEY AUTOINCREMENT, " + CATNOME + " VARCHAR(45) NOT NULL ";
     private static final String CREATE_TABLE3 = "create table " + TABLE_NAME3 + "(" + _ID2
             + " INTEGER PRIMARY KEY AUTOINCREMENT, " + CONTLIMITE + " DECIMAL (5, 2) NOT NULL, " + CONTCATCODIGO
             + " INTEGER REFERENCES CATEGORIA (_id));";

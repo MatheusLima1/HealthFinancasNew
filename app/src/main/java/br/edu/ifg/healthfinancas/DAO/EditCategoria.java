@@ -1,4 +1,4 @@
-package br.edu.ifg.healthfinancas.DAO;
+    package br.edu.ifg.healthfinancas.DAO;
 
 /**
  * Created by KuroiSaru on 16/07/16.
@@ -16,7 +16,7 @@ import br.edu.ifg.healthfinancas.R;
 
 public class EditCategoria extends Activity implements OnClickListener {
 
-    private EditText novoText,novoText2;
+    private EditText novoText/*,novoText2*/;
     private Button updateBtn, deleteBtn;
 
     private long _id;
@@ -35,7 +35,7 @@ public class EditCategoria extends Activity implements OnClickListener {
         dbManager.open();
 
         novoText = (EditText) findViewById(R.id.categoria_edittext);
-        novoText2 = (EditText) findViewById(R.id.tipo_transacao_edittext);
+        //novoText2 = (EditText) findViewById(R.id.tipo_transacao_edittext);
 
         updateBtn = (Button) findViewById(R.id.btn_update);
         deleteBtn = (Button) findViewById(R.id.btn_delete);
@@ -43,11 +43,11 @@ public class EditCategoria extends Activity implements OnClickListener {
         Intent intent = getIntent();
         String id = intent.getStringExtra("id");
         String catNome = intent.getStringExtra("catNome");
-        String tipoTransacao = intent.getStringExtra("tran_tip_codigo");
+        //String tipoTransacao = intent.getStringExtra("tran_tip_codigo");
         _id = Long.parseLong(id);
 
         novoText.setText(catNome);
-        novoText2.setText(tipoTransacao);
+        //novoText2.setText(tipoTransacao);
 
         updateBtn.setOnClickListener(this);
         deleteBtn.setOnClickListener(this);
@@ -58,9 +58,9 @@ public class EditCategoria extends Activity implements OnClickListener {
         switch (v.getId()) {
             case R.id.btn_update:
                 String catNome = novoText.getText().toString();
-                String tipoTransacao = novoText2.getText().toString();
+          //      String tipoTransacao = novoText2.getText().toString();
 
-                dbManager.update1(_id, catNome,tipoTransacao);
+                dbManager.update1(_id, catNome/*,tipoTransacao*/);
                 this.returnHome();
                 break;
 

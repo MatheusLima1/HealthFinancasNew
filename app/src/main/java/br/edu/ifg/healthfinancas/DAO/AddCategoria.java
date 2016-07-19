@@ -21,11 +21,11 @@ import br.edu.ifg.healthfinancas.R;
 
 public class AddCategoria extends Activity implements OnClickListener {
 
-    private Button addTodoBtn;
+    private Button btnAdicionarCategoria;
     private EditText catnomeEditText;
-    private EditText trantipcodigoEditText;
-    private RadioButton rdbCredito;
-    private RadioButton rdbDebito;
+    //private EditText trantipcodigoEditText;
+    //private RadioButton rdbCredito;
+    //private RadioButton rdbDebito;
 
     private DBManager dbManager;
 
@@ -41,29 +41,29 @@ public class AddCategoria extends Activity implements OnClickListener {
         //PRECISO DESCOBRIR COMO USA UM RADIO BUTTONS
 
         //sei que não vai dar certo mas vou tentar
-        trantipcodigoEditText = (EditText) findViewById(R.id.trantiptxt);
+        //trantipcodigoEditText = (EditText) findViewById(R.id.trantiptxt);
 
-        addTodoBtn = (Button) findViewById(R.id.add_record);
+        btnAdicionarCategoria = (Button) findViewById(R.id.btnAdicionarCategoria);
 
         dbManager = new DBManager(this);
         dbManager.open();
-        addTodoBtn.setOnClickListener(this);
+        btnAdicionarCategoria.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.add_record:
+            case R.id.btnAdicionarCategoria:
 
                 final String catnome = catnomeEditText.getText().toString();
-                final Integer trantip = trantipcodigoEditText.getId();
+               // final Integer trantip = trantipcodigoEditText.getId();
 
-                dbManager.insert2(catnome,trantip);
+                dbManager.insert2(catnome/*trantip*/);
 
                 Intent main = new Intent(AddCategoria.this, ListCategoria.class)
                         .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-                startActivity(main);
+                   startActivity(main);
                 break;
         }
     }

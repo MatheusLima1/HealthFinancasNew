@@ -27,7 +27,7 @@ public class ListTipoTransacao extends ActionBarActivity {
     final String[] from = new String[] { DatabaseHelper._ID,
             DatabaseHelper.TIPTIPO};
 
-    final int[] to = new int[] { R.id.id, R.id.tit_tipo_transacao};
+    final int[] to = new int[] { R.id.id1, R.id.tit_tipo_transacao};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +51,7 @@ public class ListTipoTransacao extends ActionBarActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long viewId) {
-                TextView idTextView = (TextView) view.findViewById(R.id.id);
+                TextView idTextView = (TextView) view.findViewById(R.id.id1);
                 TextView titleTextView = (TextView) view.findViewById(R.id.tit_tipo_transacao);
                 //TextView descTextView = (TextView) view.findViewById(R.id.desc);
 
