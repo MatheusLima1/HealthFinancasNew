@@ -14,7 +14,7 @@
         android:hint="@string/enter_categoria" />
 
     <!--NÃO ACHO Q VAI DAR CERTO MAS VAMOS TENTAR...-->
-        <EditText
+       <!-- <EditText
             android:id="@+id/tipo_transacao_edittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -23,7 +23,7 @@
             android:inputType="textMultiLine"
             android:minLines="5" >
         </EditText>
-
+-->
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
